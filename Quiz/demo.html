@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DoM</title>
+</head>
+<body>
+    <div id="menu">
+        <ul class="menu">
+            <li>HOme</li>
+            <li>About us</li>
+            <li>Con<b>tacts</b></li>
+        </ul>
+    </div>
+        <script>
+            let insertAfter=(newNode,existingNode)=>{
+                    return existingNode.parentNode.insertBefore(newNode,existingNode.nextSibling);
+            }
+            let menu1=document.getElementById("menu");
+            let menu=document.getElementsByClassName("menu");
+            let ul=document.createElement("span");
+            ul.textContent="Yeah baby Yeah baby ";
+            menu1.insertBefore(ul,menu1.firstElementChild);
+
+            let li=document.createElement("li");
+            li.textContent="ServICES";
+
+            insertAfter(li,menu.lastElementChild);
+
+
+        </script>
+</body>
+<style>
+    span{
+        color: brown;
+        background-color: black;
+    }
+</style>
+</html>
