@@ -1,0 +1,187 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "User API",
+    "description": "User API Microservice architecture",
+    "license": {
+      "name": "MIT",
+      "url": "https://opensource.org/licenses/MIT"
+    }
+  },
+  "host": "localhost:3001",
+  "basePath": "/user",
+  "tags": [
+    {
+      "name": "user",
+      "description": "API for User system"
+    }
+  ],
+  "schemes": [
+    "http"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/login": {
+      "post": {
+        "tags": [
+          "user"
+        ],
+        "summary": "post user then user will get access token which expires in 15 min and refresh token. by using the refresh token user can renew the access token for further uses",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/login"
+            }
+          }
+        }
+      }
+    },
+    "/signup": {
+      "post": {
+        "tags": [
+          "user"
+        ],
+        "summary": "post all user in system",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/signup"
+            }
+          }
+        }
+      }
+    },
+    "/profile": {
+      "get": {
+        "tags": [
+          "user"
+        ],
+        "summary": "get profile of the user in system",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/profile"
+            }
+          }
+        }
+      }
+    },
+    "/refreshToken": {
+      "post": {
+        "tags": [
+          "user"
+        ],
+        "summary": "post refresh token of the user in system then user will get the new access token",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/refreshToken"
+            }
+          }
+        }
+      }
+    },
+    "/logout": {
+      "delete": {
+        "tags": [
+          "user"
+        ],
+        "summary": "delete refresh token of the user in system and logout",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/logout"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "signup": {
+      "required": [
+        "userName",
+        "email",
+        "password"
+      ],
+      "properties": {
+        "userName": {
+          "type": "String",
+          "required": true
+        },
+        "email": {
+          "type": "String",
+          "required": true
+        },
+        "password": {
+          "type": "String",
+          "required": true
+        }
+      }
+    },
+    "login": {
+      "required": [
+       
+        "email",
+        "password"
+        
+      ],
+      "properties": {
+       
+        "email": {
+          "type": "String",
+          "required": true
+        },
+        "password": {
+          "type": "String",
+          "required": true
+        }
+      }
+    },
+    "profile": {
+      "required": [
+        "authorization"
+      ],
+      "properties": {
+        "authorization": {
+          "type": "String",
+          "required": true
+        }
+        }
+      },
+    "refreshToken": {
+      "required": [
+        "refreshToken"
+      ],
+      "properties": {
+        "refreshToken": {
+          "type": "String",
+          "required": true
+        }
+        }
+      },
+      "logout": {
+        "required": [
+          "refreshtoken"
+        ],
+        "properties": {
+          "refreshtoken": {
+            "type": "String",
+            "required": true
+          }
+          }
+        }
+
+    }
+  }
