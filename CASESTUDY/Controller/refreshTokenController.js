@@ -1,11 +1,9 @@
-const userTokens=require('../models/User');
 const jwt=require('jsonwebtoken');
-
+const dotenv=require('dotenv').config();
 const UserToken = require('../models/userTokens');
 const { refreshTokenBodyValidation } = require('../utills/validationSchema');
 const { verifyRefreshToken } = require('../utills/verifyRefreshToken');
-const ACCESS_TOKEN_PRIVATE_KEY='UserApiTokenKey';
-
+const ACCESS_TOKEN_PRIVATE_KEY=process.env.ACCESS_TOKEN_PRIVATE_KEY;
 const newRefreshToken=(req,res)=>{
     const {error} = refreshTokenBodyValidation(req.body);
     if(error)

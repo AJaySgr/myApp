@@ -1,7 +1,10 @@
 const jwt=require('jsonwebtoken');
+const dotenv=require('dotenv').config();
 const UserToken = require('../models/userTokens');
-const ACCESS_TOKEN_PRIVATE_KEY='UserApiTokenKey';
-const REFRESH_TOKEN_PRIVATE_KEY='UserApiTokenRefreshKey';
+
+const ACCESS_TOKEN_PRIVATE_KEY=process.env.ACCESS_TOKEN_PRIVATE_KEY;
+const REFRESH_TOKEN_PRIVATE_KEY=process.env.REFRESH_TOKEN_PRIVATE_KEY;
+
 
 const genrateToken=async(user)=>{
     try{

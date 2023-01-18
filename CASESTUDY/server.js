@@ -1,6 +1,7 @@
 const express=require('express');
 const morgan = require('morgan');
 const  dbConnect  = require('./dbConnect');
+const dotenv=require('dotenv').config();
 const app=express();
 const userrouter=require('./Routes/Userrouter')
 const swaggerUi = require('swagger-ui-express'),
@@ -22,7 +23,8 @@ app.use('/Start',(req,res)=>{
 app.use('/user',userrouter);
 
 
-let port=process.env.PORT||3001
-app.listen(port,()=>{
-    console.log(`server is running at port : ${port}`);
+//let PORT=process.env.PORT||3001
+let PORT=process.env.PORT
+app.listen(PORT,()=>{
+    console.log(`server is running at port : ${PORT}`);
 })

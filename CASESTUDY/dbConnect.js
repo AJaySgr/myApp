@@ -1,9 +1,11 @@
 const mongoose=require('mongoose');
-const url_need="mongodb://127.0.0.1/USERSYS";
+const dotenv=require('dotenv').config();
+const MONGOOSE_URL=process.env.MONGOOSE_URL;
+
 const dbConnect=()=>{
     const connectionParms={useNewUrlParser:true};
     mongoose.set('strictQuery', false);
-    mongoose.connect(url_need,connectionParms);
+    mongoose.connect(MONGOOSE_URL,connectionParms);
    
 
     mongoose.connection.on("connected",()=>{

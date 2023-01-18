@@ -1,5 +1,6 @@
 const jwt=require('jsonwebtoken');
-const ACCESS_TOKEN_PRIVATE_KEY='UserApiTokenKey';
+const dotenv=require('dotenv').config();
+const ACCESS_TOKEN_PRIVATE_KEY=process.env.ACCESS_TOKEN_PRIVATE_KEY;
 
 const auth=async(req,res,next)=>{
     const token=req.headers.authorization;
