@@ -3,7 +3,8 @@ const bcrypt=require('bcrypt');
 const {signupBodyValidation,loginBodyValidation}=require('../utills/validationSchema');
 const genrateToken = require('../utills/genrateToken');
 const { encryptAlgo, decryptAlgo } = require('../utills/aes256Algo');
-
+const NodeCache = require('node-cache')
+const myCache = new NodeCache();
 
 const SALT=process.env.SALT;
 const signUpUser=async(req,res)=>{
@@ -72,21 +73,20 @@ const logInUser=async(req,res)=>{
 }
 
 
-const profileDetails=async(req,res)=>{
-    try {
-     
-        const user=await userModel.findById(req._id);
-        if(user)
-            return res  
-                    .status(200)
-                    .json({error:false,Profile:user});
-
+const getdetails = async(req, res) => {
+    userModel.findById(req._id, (err, docs) => {
+      if(myCache.has('uniqueeKey')){
+        console.log('Retrieved value from cache !!')
         
-    } catch (error) {
-        console.log(error);
-        res.status(500).json({error:true,Message:"Internal server error!!"});
-        
-    }
-}
+        res.status(200).json(myCache.get('uniqueeKey'));
+      }else{
+      let result = {error:false,Profile:docs};
+        myCache.set('uniqueeKey',result)
+        console.log('Value not present in cache,'
+            + ' performing computation')
+        res.json(result)
+      }
+    });
+  }
 
-module.exports={signUpUser,logInUser,profileDetails};
+module.exports={signUpUser,logInUser,getdetails};
