@@ -1,7 +1,11 @@
 const crypto = require('crypto');
+const dotenv=require('dotenv').config();
 
 
-const key = Buffer.from('BpwiCmfkfEFNjxqfLRzPk/YhgwZqPxL8o3if2/2CZHg=','base64')
+const KEY_1=process.env.KEY_1;
+const KEY_2=process.env.KEY_2;
+
+const key = Buffer.from(KEY_1,KEY_2);
 
 
 const encryptAlgo=(plaintext)=> {
