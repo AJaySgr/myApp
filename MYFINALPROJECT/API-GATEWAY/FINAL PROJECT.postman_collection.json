@@ -1,0 +1,666 @@
+{
+	"info": {
+		"_postman_id": "a98fa113-cd68-4c8f-b96f-136d3867dee7",
+		"name": "FINAL PROJECT",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "UserSignup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"username\":\"Ajay\",\r\n  \"email\":\"gunthergunther04@gmail.com\",\r\n  \"password\":\"hello@1234\"  \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5001/users/signup",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"users",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UserSignin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n      \"email\":\"gunthergunther04@gmail.com\",\r\n  \"password\":\"hello@1234\" \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5001/users/signin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"users",
+								"signin"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "AdminSignup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"Ajay \",\r\n  \"email\":\"ajau9560@gmail.com\",\r\n  \"password\":\"web@1234\"  \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/admin/signup",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"admin",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AdminSignin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"ajau9560@gmail.com\",\r\n  \"password\":\"web@1234\"  \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/admin/signin",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"admin",
+								"signin"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Debit",
+			"item": [
+				{
+					"name": "Users",
+					"item": [
+						{
+							"name": "DebitForm",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Imd1bnRoZXJndW50aGVyMDRAZ21haWwuY29tIiwiaWQiOiI2M2NkMzA0YTNmYWQ2OWY4YzFlZjA2ZDAiLCJpYXQiOjE2NzQzOTIxNDF9.27U60lgeODziL4Q1tcXkIuvv100lGgNGfeFZbBvjeh8",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"firstName\":\"Ajay\",\r\n        \"lastName\":\"Sagar\",\r\n        \"phoneNumber\":\"9599415161\",\r\n        \"gender\":\"Male\",\r\n        \"dob\":\"12/23/1999\",\r\n        \"address\":\"Ghaziabad\",\r\n        \"accountNumber\":\"1222100012\",\r\n        \"accountType\":\"Current\",    \r\n        \"email\":\"gunthergunther04@gmail.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5002/users/Form",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5002",
+									"path": [
+										"users",
+										"Form"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "FormStatus",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Imd1bnRoZXJndW50aGVyMDRAZ21haWwuY29tIiwiaWQiOiI2M2NkMzA0YTNmYWQ2OWY4YzFlZjA2ZDAiLCJpYXQiOjE2NzQzOTIxNDF9.27U60lgeODziL4Q1tcXkIuvv100lGgNGfeFZbBvjeh8",
+										"type": "default"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:5002/users/FormStatus/9599415161",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5002",
+									"path": [
+										"users",
+										"FormStatus",
+										"9599415161"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetDebitCard",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Imd1bnRoZXJndW50aGVyMDRAZ21haWwuY29tIiwiaWQiOiI2M2NkMzA0YTNmYWQ2OWY4YzFlZjA2ZDAiLCJpYXQiOjE2NzQzOTIxNDF9.27U60lgeODziL4Q1tcXkIuvv100lGgNGfeFZbBvjeh8",
+										"type": "default"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:5002/users/debitcard",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5002",
+									"path": [
+										"users",
+										"debitcard"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Admin",
+					"item": [
+						{
+							"name": "GetFormDebit",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFqYXU5NTYwQGdtYWlsLmNvbSIsImlkIjoiNjNjZDJlYjE3NTAwZjNkOGY0MzdkMTU1IiwiaWF0IjoxNjc0MzkxMjM3fQ.eE4QTPbE4pNPNA9rsYZVVhKtwanTt-5fL01QGCH8wE8",
+										"type": "default"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:5002/admin/GetDebitData",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5002",
+									"path": [
+										"admin",
+										"GetDebitData"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "SendApprovalDebit",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFqYXU5NTYwQGdtYWlsLmNvbSIsImlkIjoiNjNjZDJlYjE3NTAwZjNkOGY0MzdkMTU1IiwiaWF0IjoxNjc0MzkxMjM3fQ.eE4QTPbE4pNPNA9rsYZVVhKtwanTt-5fL01QGCH8wE8",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"userId\":\"63cd304a3fad69f8c1ef06d0\",\r\n    \"status\":\"Approved\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5002/admin/send",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5002",
+									"path": [
+										"admin",
+										"send"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "AssignDebitCard",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFqYXU5NTYwQGdtYWlsLmNvbSIsImlkIjoiNjNjZDJlYjE3NTAwZjNkOGY0MzdkMTU1IiwiaWF0IjoxNjc0MzkxMjM3fQ.eE4QTPbE4pNPNA9rsYZVVhKtwanTt-5fL01QGCH8wE8",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"userId\":\"63cd304a3fad69f8c1ef06d0\",\r\n    \"phoneNumber\":\"9599415161\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5002/admin/addcard",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5002",
+									"path": [
+										"admin",
+										"addcard"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetAllCard",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFqYXU5NTYwQGdtYWlsLmNvbSIsImlkIjoiNjNjZDJlYjE3NTAwZjNkOGY0MzdkMTU1IiwiaWF0IjoxNjc0MzkxMjM3fQ.eE4QTPbE4pNPNA9rsYZVVhKtwanTt-5fL01QGCH8wE8",
+										"type": "default"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:5002/admin/Cards",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5002",
+									"path": [
+										"admin",
+										"Cards"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "RemoveCard",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFqYXU5NTYwQGdtYWlsLmNvbSIsImlkIjoiNjNjZDJlYjE3NTAwZjNkOGY0MzdkMTU1IiwiaWF0IjoxNjc0MzkxMjM3fQ.eE4QTPbE4pNPNA9rsYZVVhKtwanTt-5fL01QGCH8wE8",
+										"type": "default"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:5002/admin//delete/7056341770540610",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5002",
+									"path": [
+										"admin",
+										"",
+										"delete",
+										"7056341770540610"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Credit",
+			"item": [
+				{
+					"name": "User",
+					"item": [
+						{
+							"name": "CreditForm",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Imd1bnRoZXJndW50aGVyMDRAZ21haWwuY29tIiwiaWQiOiI2M2NkMzA0YTNmYWQ2OWY4YzFlZjA2ZDAiLCJpYXQiOjE2NzQzOTIxNDF9.27U60lgeODziL4Q1tcXkIuvv100lGgNGfeFZbBvjeh8",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \r\n    \"firstName\":\"Ajay\",\r\n    \"lastName\":\"Sagar\",\r\n    \"panNumber\":\"DVHPS8590E\",\r\n    \"creditScore\":\"894\",\r\n    \"gender\":\"Male\",\r\n    \"dob\":\"09/31/1997\",\r\n    \"address\":\"Ghaziabad Utter Pradesh 201102\",\r\n    \"phoneNumber\":\"9898981122\",\r\n    \"workNumber\":\"9911453454\" ,\r\n    \"officeEmail\":\"gunthergunther04@gmail.com\",\r\n    \"monthlSalary\":\"122000\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5003/users/Form",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5003",
+									"path": [
+										"users",
+										"Form"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetCreditCardStatus",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Imd1bnRoZXJndW50aGVyMDRAZ21haWwuY29tIiwiaWQiOiI2M2NkMzA0YTNmYWQ2OWY4YzFlZjA2ZDAiLCJpYXQiOjE2NzQzOTIxNDF9.27U60lgeODziL4Q1tcXkIuvv100lGgNGfeFZbBvjeh8",
+										"type": "default"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:5003/users/FormStatus/9898981122",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5003",
+									"path": [
+										"users",
+										"FormStatus",
+										"9898981122"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetCreditcard",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Imd1bnRoZXJndW50aGVyMDRAZ21haWwuY29tIiwiaWQiOiI2M2NkMzA0YTNmYWQ2OWY4YzFlZjA2ZDAiLCJpYXQiOjE2NzQzOTIxNDF9.27U60lgeODziL4Q1tcXkIuvv100lGgNGfeFZbBvjeh8",
+										"type": "default"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:5003/users/Creditcard/63cd304a3fad69f8c1ef06d0",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5003",
+									"path": [
+										"users",
+										"Creditcard",
+										"63cd304a3fad69f8c1ef06d0"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "CreditRepayment",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Imd1bnRoZXJndW50aGVyMDRAZ21haWwuY29tIiwiaWQiOiI2M2NkMzA0YTNmYWQ2OWY4YzFlZjA2ZDAiLCJpYXQiOjE2NzQzOTIxNDF9.27U60lgeODziL4Q1tcXkIuvv100lGgNGfeFZbBvjeh8",
+										"type": "default"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:5003/users/Creditcard/repayment/63cd304a3fad69f8c1ef06d0",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5003",
+									"path": [
+										"users",
+										"Creditcard",
+										"repayment",
+										"63cd304a3fad69f8c1ef06d0"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Admin",
+					"item": [
+						{
+							"name": "GetFormCredit",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFqYXU5NTYwQGdtYWlsLmNvbSIsImlkIjoiNjNjZDJlYjE3NTAwZjNkOGY0MzdkMTU1IiwiaWF0IjoxNjc0MzkxMjM3fQ.eE4QTPbE4pNPNA9rsYZVVhKtwanTt-5fL01QGCH8wE8",
+										"type": "default"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:5003/admin/GetCreditData",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5003",
+									"path": [
+										"admin",
+										"GetCreditData"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "SendAppOrRej CreditCard",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFqYXU5NTYwQGdtYWlsLmNvbSIsImlkIjoiNjNjZDJlYjE3NTAwZjNkOGY0MzdkMTU1IiwiaWF0IjoxNjc0MzkxMjM3fQ.eE4QTPbE4pNPNA9rsYZVVhKtwanTt-5fL01QGCH8wE8",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5003/admin/send/63cd304a3fad69f8c1ef06d0",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5003",
+									"path": [
+										"admin",
+										"send",
+										"63cd304a3fad69f8c1ef06d0"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "AssignCreditCardAdmin",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFqYXU5NTYwQGdtYWlsLmNvbSIsImlkIjoiNjNjZDJlYjE3NTAwZjNkOGY0MzdkMTU1IiwiaWF0IjoxNjc0MzkxMjM3fQ.eE4QTPbE4pNPNA9rsYZVVhKtwanTt-5fL01QGCH8wE8",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"userId\":\"63cd304a3fad69f8c1ef06d0\",\r\n    \"phoneNumber\":\"9599417416\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5003/admin/addcard",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5003",
+									"path": [
+										"admin",
+										"addcard"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetCreditCards",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFqYXU5NTYwQGdtYWlsLmNvbSIsImlkIjoiNjNjZDJlYjE3NTAwZjNkOGY0MzdkMTU1IiwiaWF0IjoxNjc0MzkxMjM3fQ.eE4QTPbE4pNPNA9rsYZVVhKtwanTt-5fL01QGCH8wE8",
+										"type": "default"
+									}
+								],
+								"url": {
+									"raw": "localhost:5003/admin/allcards",
+									"host": [
+										"localhost"
+									],
+									"port": "5003",
+									"path": [
+										"admin",
+										"allcards"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "New Request",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFqYXU5NTYwQGdtYWlsLmNvbSIsImlkIjoiNjNjZDJlYjE3NTAwZjNkOGY0MzdkMTU1IiwiaWF0IjoxNjc0MzkxMjM3fQ.eE4QTPbE4pNPNA9rsYZVVhKtwanTt-5fL01QGCH8wE8",
+										"type": "default"
+									}
+								],
+								"url": {
+									"raw": "localhost:5003/admin//delete/5924278956835256",
+									"host": [
+										"localhost"
+									],
+									"port": "5003",
+									"path": [
+										"admin",
+										"",
+										"delete",
+										"5924278956835256"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}
