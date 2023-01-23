@@ -8,16 +8,58 @@
 		{
 			"name": "signup",
 			"request": {
-				"method": "GET",
-				"header": []
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userName\":\"Tom\",\r\n    \"email\":\"Tom123@gmail.com\",\r\n    \"password\":\"Ajay@#23\" \r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/user/signup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"user",
+						"signup"
+					]
+				}
 			},
 			"response": []
 		},
 		{
 			"name": "login",
 			"request": {
-				"method": "GET",
-				"header": []
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"email\":\"Tom123@gmail.com\",\r\n    \"password\":\"Ajay@#23\" \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/user/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"user",
+						"login"
+					]
+				}
 			},
 			"response": []
 		},
@@ -25,23 +67,83 @@
 			"name": "profile",
 			"request": {
 				"method": "GET",
-				"header": []
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2NlMmE3MWQxZmI3N2Q3MWY0ZDRlYzAiLCJlbWFpbCI6IlRvbTEyM0BnbWFpbC5jb20iLCJpYXQiOjE2NzQ0NTU2OTMsImV4cCI6MTY3NDQ1NjU5M30.yhwPd_crwfntrEwaCKdLS-kjtKy66M6GvH-4fSOMi2c\",\n    \"refreshToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3001/user/profile",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"user",
+						"profile"
+					]
+				}
 			},
 			"response": []
 		},
 		{
 			"name": "Refresh token",
 			"request": {
-				"method": "GET",
-				"header": []
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"refreshtoken\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2MwZjJlNTVkNmZkNTg4YTFhZTRhMGUiLCJlbWFpbCI6ImRpdnlhbnNoQGdtYWlsLmNvbSIsImlhdCI6MTY3MzU4OTUyMywiZXhwIjoxNjc2MTgxNTIzfQ.tkZ5B6bG5kOXL6sujdMyKzy35FaOXZh97hVkkTjRRk4\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/user/refreshToken",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"user",
+						"refreshToken"
+					]
+				}
 			},
 			"response": []
 		},
 		{
 			"name": "logout",
 			"request": {
-				"method": "GET",
-				"header": []
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"refreshtoken\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2NlMWYxNmY3NTUxNzYyODA4ZjEzMWMiLCJlbWFpbCI6InBhbmRleUBnbWFpbC5jb20iLCJpYXQiOjE2NzQ0NTI4MDUsImV4cCI6MTY3NzA0NDgwNX0.8ulubHmSZO04MVQ3L-rdxf5G-XXQZ4UifqWUlQ7hlWs\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/user/logout",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"user",
+						"logout"
+					]
+				}
 			},
 			"response": []
 		}
