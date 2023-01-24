@@ -3,8 +3,7 @@ const dotenv=require("dotenv");
 dotenv.config();
 const MONGOOSE_URL=process.env.MONGOOSE_URL;
 
-console.log(MONGOOSE_URL,"HELLO")
-console.log(process.env.PORT,"HELLO")
+
 const dbConnect=()=>{
     const connectionParms={useNewUrlParser:true};
     mongoose.set('strictQuery', false);
